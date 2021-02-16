@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('app2') }}{% endblock %}
+
+{% block javascripts %}{{ encore_entry_script_tags('app2') }}{% endblock %}
+{% block menu %}{% endblock %}
+{% block body %}
+<div class="login-body-bg">
+    	<div class="login">
+   	    	<img class="login-logo" src="{{asset('images/logo-tss.svg')}}" width="200" height="31" />
+            <h1>{{'Prihlásenie'|trans}}</h1>
+            <br/>
+            <form method="POST" >
+                
+
+               
+				<input class="meno-form" name="username" placeholder="Doménové meno" value="{{ last_username }}" autofocus required="" id="inputUsername" type="text"><br/>
+				<input class="heslo-form" name="password" placeholder="Heslo" required="" type="password" id="inputPassword" required><br/>
+							             
+    			<input id="remember_me" name="_remember_me" type="checkbox">
+    			<label for="remember_me"><span></span>Zapamätať prihlasovacie údaje</label><br/>
+
+                 {% if error %}
+                    <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+
+                {% endif %}
+                <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                    >
+				<input class="btn" name="submit" value="Prihlásiť sa ›" type="submit">
+            </form>        
+        </div>    
+    </div>
+
+
+{% endblock %}

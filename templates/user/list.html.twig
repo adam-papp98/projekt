@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+{% block content%}
+<h1> pokus </h1>
+{{'test'}}
+{% for user in users %}
+    <div>
+        {{user.username}} <a href="{{path('user-edit',{id:user.id})}}">Edit</a>
+    </div>
+{% endfor %}
+
+{% endblock %}

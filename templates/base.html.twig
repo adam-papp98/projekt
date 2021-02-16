@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TSS Group{% endblock %}</title>
+        {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+
+        {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+    </head>
+    <body>
+    {% block menu %}
+        <div class="header-bg">
+            <div class="header">
+                <div id="menu">
+                    <a href="{{path('home')}}"><img src="{{asset('images/tss-logo.png')}}" width="166" height="25" alt="TSS GROUP"></a>
+                    <nav class="desktop">
+                        <a href=''>Test</a>
+                        
+                       
+                    </nav>
+                    <nav class="mobile">
+                        <button>Toggle</button>
+                        <div>
+                            <a href=''>Testovanie</a>
+                            
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+        {% block body %}
+        {% block heading%}
+        <div class="heading">
+            <br/>
+            
+            <h1>{% block headingtext%}<?php echo $text4;?>{% endblock %}</h1>
+            <h4>{% block headingtext2%}TSS Group{% endblock %}</h4>
+
+        </div>
+        {% endblock %}
+          <div class="content">{% block content%}{% endblock %}
+          </div>
+        {% endblock %}
+    </body>
+</html>
